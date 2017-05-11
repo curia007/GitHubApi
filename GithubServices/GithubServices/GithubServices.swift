@@ -8,6 +8,8 @@
 
 import Foundation
 
+public let PROCESSED_GITHUB_SERVICE_PULL_REQUEST: String = "PROCESSED_GITHUB_SERVICE_PULL_REQUEST"
+
 public class GithubService : NSObject
 {
     private let HOST: String = "https://api.github.com/"
@@ -21,7 +23,7 @@ public class GithubService : NSObject
     
     private var session: URLSession?
     private var dataSessionTask: URLSessionDataTask?
-    private let authorization : [String : String] = ["Authorization" : "token cd5a8dee2a0ad1b82a514ce1e1f02196d027a5b0"]
+    private let authorization : [String : String] = ["Authorization" : "token c5dda78451314480d41c5a981e306433176b1319"]
     
     override public init()
     {
@@ -54,12 +56,15 @@ public class GithubService : NSObject
                         {
                             do
                             {
-                                let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options:
+                                let jsonResult : Any = try JSONSerialization.jsonObject(with: urlContent, options:
                                     JSONSerialization.ReadingOptions.mutableContainers)
                                 
-                                debugPrint("[\(#function)] json: \(jsonResult)")
-                                
-                            } catch
+                                debugPrint("[\(#function)] json: \(String(describing: jsonResult))")
+                            
+                                NotificationCenter.default.post(name: Notification.Name(rawValue: PROCESSED_GITHUB_SERVICE_PULL_REQUEST), object: jsonResult)
+
+                            }
+                            catch
                             {
                                 print("JSON Processing Failed")
                             }

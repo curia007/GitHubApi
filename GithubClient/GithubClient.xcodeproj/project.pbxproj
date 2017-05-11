@@ -17,6 +17,7 @@
 		C04E3CE51EC4F20D0043C4CA /* GithubClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E3CE41EC4F20D0043C4CA /* GithubClientUITests.swift */; };
 		C04E3D511EC5025A0043C4CA /* GithubServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04E3D501EC5025A0043C4CA /* GithubServices.framework */; };
 		C04E3D521EC5025A0043C4CA /* GithubServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C04E3D501EC5025A0043C4CA /* GithubServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C04E3D591EC515720043C4CA /* GithubClientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E3D581EC515720043C4CA /* GithubClientTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		C04E3CE41EC4F20D0043C4CA /* GithubClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubClientUITests.swift; sourceTree = "<group>"; };
 		C04E3CE61EC4F20D0043C4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C04E3D501EC5025A0043C4CA /* GithubServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GithubServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04E3D581EC515720043C4CA /* GithubClientTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubClientTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				C04E3CC11EC4F20D0043C4CA /* AppDelegate.swift */,
 				C04E3CC31EC4F20D0043C4CA /* GithubClientViewController.swift */,
+				C04E3D581EC515720043C4CA /* GithubClientTableViewController.swift */,
 				C04E3CC51EC4F20D0043C4CA /* Main.storyboard */,
 				C04E3CCB1EC4F20D0043C4CA /* Assets.xcassets */,
 				C04E3CCD1EC4F20D0043C4CA /* LaunchScreen.storyboard */,
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C04E3CC41EC4F20D0043C4CA /* GithubClientViewController.swift in Sources */,
+				C04E3D591EC515720043C4CA /* GithubClientTableViewController.swift in Sources */,
 				C04E3CCA1EC4F20D0043C4CA /* GithubClient.xcdatamodeld in Sources */,
 				C04E3CC21EC4F20D0043C4CA /* AppDelegate.swift in Sources */,
 			);
