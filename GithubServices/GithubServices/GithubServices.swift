@@ -18,7 +18,6 @@ public class GithubService : NSObject
     private let PULLS : String = "pulls"
     
     //private let PULL_REQUEST  : String = "repos/magicalpanda/MagicalRecord/pulls"
-    
     //private let personalToken: String = "cd5a8dee2a0ad1b82a514ce1e1f02196d027a5b0"
     
     private var session: URLSession?
@@ -38,7 +37,9 @@ public class GithubService : NSObject
         debugPrint("[\(#function)] url: \(url)")
         
         var request : URLRequest = URLRequest(url: url)
-        request.allHTTPHeaderFields = authorization
+        
+        //GitHub doesn't allow Personal Access Tokens
+        //request.allHTTPHeaderFields = authorization
         
         self.dataSessionTask = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             
@@ -59,7 +60,7 @@ public class GithubService : NSObject
                                 let jsonResult : Any = try JSONSerialization.jsonObject(with: urlContent, options:
                                     JSONSerialization.ReadingOptions.mutableContainers)
                                 
-                                debugPrint("[\(#function)] json: \(String(describing: jsonResult))")
+                                //debugPrint("[\(#function)] json: \(String(describing: jsonResult))")
                             
                                 NotificationCenter.default.post(name: Notification.Name(rawValue: PROCESSED_GITHUB_SERVICE_PULL_REQUEST), object: jsonResult)
 
@@ -72,7 +73,7 @@ public class GithubService : NSObject
                     }
                     else
                     {
-                        debugPrint("[\(#function)] status code: \(httpResponse.statusCode)")
+                        debugPrint("[\(#function)] Service Call failure: status code: \(httpResponse.statusCode)")
                     }
                 }
             }
