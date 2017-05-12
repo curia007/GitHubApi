@@ -50,12 +50,12 @@ class GithubClientTableViewController: UITableViewController
 
     override func numberOfSections(in tableView: UITableView) -> Int
     {
-        return self.pullRequests.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 1
+        return self.pullRequests.count
     }
 
     // MARK: - TableViewDelegate methods
