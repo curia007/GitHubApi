@@ -10,6 +10,7 @@ import Foundation
 
 public let PROCESSED_GITHUB_SERVICE_PULL_REQUEST: String = "PROCESSED_GITHUB_SERVICE_PULL_REQUEST"
 public let PROCESSED_GITHUB_SERVICE_PULL_REQUEST_BY_NUMBER: String = "PROCESSED_GITHUB_SERVICE_PULL_REQUEST_BY_NUMBER"
+public let PROCESSED_GITHUB_SERVICE_PULL_REQUEST_FILES: String = "PROCESSED_GITHUB_SERVICE_PULL_REQUEST_FILES"
 
 public class GithubService : NSObject
 {
@@ -148,5 +149,71 @@ public class GithubService : NSObject
         self.dataSessionTask?.resume()
 
     }
+    
+    public func retrievePullRequestFileChanges(_ owner: String, repos: String, number: Int32)
+    {
+        //https://api.github.com/repos/magicalpanda/MagicalRecord/pulls/1228
+        
+        let urlString : String = HOST + REPOS + "/" + owner + "/" + repos + "/" + PULLS + "/" + String(number) + "/files"
+        let url : URL = URL(string: urlString)!
+        
+        debugPrint("[\(#function)] url: \(url)")
+        
+        var request : URLRequest = URLRequest(url: url)
+        
+        //GitHub doesn't allow Personal Access Tokens
+        //request.allHTTPHeaderFields = authorization
+        
+        //Add Accept header
+        request.addValue("application/vnd.github.VERSION.diff", forHTTPHeaderField: "Accept")
+        
+        self.dataSessionTask = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+            
+            if (error == nil)
+            {
+                if (response != nil)
+                {
+                    let httpResponse: HTTPURLResponse = response as! HTTPURLResponse
+                    
+                    if (httpResponse.statusCode == 200)
+                    {
+                        debugPrint("[\(#function)] status code: \(httpResponse.statusCode)")
+                        
+                        if let urlContent = data
+                        {
+                            do
+                            {
+                                let jsonResult : Any = try JSONSerialization.jsonObject(with: urlContent, options:
+                                    JSONSerialization.ReadingOptions.mutableContainers)
+                                
+                                //debugPrint("[\(#function)] json: \(String(describing: jsonResult))")
+                                
+                                NotificationCenter.default.post(name: Notification.Name(rawValue: PROCESSED_GITHUB_SERVICE_PULL_REQUEST_FILES), object: jsonResult)
+                                
+                            }
+                            catch
+                            {
+                                print("JSON Processing Failed")
+                            }
+                        }
+                    }
+                    else
+                    {
+                        debugPrint("[\(#function)] Service Call failure: status code: \(httpResponse.statusCode)")
+                    }
+                }
+            }
+            else
+            {
+                print("\(#function):: error: \(error?.localizedDescription ?? "Lotto Processing Error...")")
+            }
+            
+            
+        })
+        
+        self.dataSessionTask?.resume()
+        
+    }
+
 }
 
