@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C04E3CC21EC4F20D0043C4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E3CC11EC4F20D0043C4CA /* AppDelegate.swift */; };
-		C04E3CC41EC4F20D0043C4CA /* GithubClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E3CC31EC4F20D0043C4CA /* GithubClientViewController.swift */; };
+		C04E3CC41EC4F20D0043C4CA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E3CC31EC4F20D0043C4CA /* TestViewController.swift */; };
 		C04E3CC71EC4F20D0043C4CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C04E3CC51EC4F20D0043C4CA /* Main.storyboard */; };
 		C04E3CCA1EC4F20D0043C4CA /* GithubClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C04E3CC81EC4F20D0043C4CA /* GithubClient.xcdatamodeld */; };
 		C04E3CCC1EC4F20D0043C4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C04E3CCB1EC4F20D0043C4CA /* Assets.xcassets */; };
@@ -17,7 +17,7 @@
 		C04E3CE51EC4F20D0043C4CA /* GithubClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E3CE41EC4F20D0043C4CA /* GithubClientUITests.swift */; };
 		C04E3D511EC5025A0043C4CA /* GithubServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04E3D501EC5025A0043C4CA /* GithubServices.framework */; };
 		C04E3D521EC5025A0043C4CA /* GithubServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C04E3D501EC5025A0043C4CA /* GithubServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C04E3D591EC515720043C4CA /* GithubClientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E3D581EC515720043C4CA /* GithubClientTableViewController.swift */; };
+		C0C861181EC588F100F2546A /* GitHubClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C861171EC588F100F2546A /* GitHubClientViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 /* Begin PBXFileReference section */
 		C04E3CBE1EC4F20D0043C4CA /* GithubClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04E3CC11EC4F20D0043C4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C04E3CC31EC4F20D0043C4CA /* GithubClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubClientViewController.swift; sourceTree = "<group>"; };
+		C04E3CC31EC4F20D0043C4CA /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		C04E3CC61EC4F20D0043C4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C04E3CC91EC4F20D0043C4CA /* GithubClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GithubClient.xcdatamodel; sourceTree = "<group>"; };
 		C04E3CCB1EC4F20D0043C4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		C04E3CE41EC4F20D0043C4CA /* GithubClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubClientUITests.swift; sourceTree = "<group>"; };
 		C04E3CE61EC4F20D0043C4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C04E3D501EC5025A0043C4CA /* GithubServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GithubServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04E3D581EC515720043C4CA /* GithubClientTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubClientTableViewController.swift; sourceTree = "<group>"; };
+		C0C861171EC588F100F2546A /* GitHubClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubClientViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				C04E3CC11EC4F20D0043C4CA /* AppDelegate.swift */,
-				C04E3CC31EC4F20D0043C4CA /* GithubClientViewController.swift */,
-				C04E3D581EC515720043C4CA /* GithubClientTableViewController.swift */,
+				C04E3CC31EC4F20D0043C4CA /* TestViewController.swift */,
 				C04E3CC51EC4F20D0043C4CA /* Main.storyboard */,
+				C0C861171EC588F100F2546A /* GitHubClientViewController.swift */,
 				C04E3CCB1EC4F20D0043C4CA /* Assets.xcassets */,
 				C04E3CCD1EC4F20D0043C4CA /* LaunchScreen.storyboard */,
 				C04E3CD01EC4F20D0043C4CA /* Info.plist */,
@@ -288,10 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C04E3CC41EC4F20D0043C4CA /* GithubClientViewController.swift in Sources */,
-				C04E3D591EC515720043C4CA /* GithubClientTableViewController.swift in Sources */,
+				C04E3CC41EC4F20D0043C4CA /* TestViewController.swift in Sources */,
 				C04E3CCA1EC4F20D0043C4CA /* GithubClient.xcdatamodeld in Sources */,
 				C04E3CC21EC4F20D0043C4CA /* AppDelegate.swift in Sources */,
+				C0C861181EC588F100F2546A /* GitHubClientViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
