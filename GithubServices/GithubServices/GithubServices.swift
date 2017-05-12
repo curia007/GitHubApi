@@ -82,8 +82,6 @@ public class GithubService : NSObject
             {
                 print("\(#function):: error: \(error?.localizedDescription ?? "Lotto Processing Error...")")
             }
-            
-            
         })
         
         self.dataSessionTask?.resume()
