@@ -25,15 +25,22 @@ class GitHubClientViewController: UIViewController, UITableViewDelegate, UITable
 
         // Do any additional setup after loading the view.
         service.retrievePullRequests("magicalpanda", repos: "MagicalRecord")
+        
+        // the alert view
+        //let alert = UIAlertController(title: "", message: "Loading Pull Requests", preferredStyle: .alert)
+        //self.present(alert, animated: true, completion: nil)
+        
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: PROCESSED_GITHUB_SERVICE_PULL_REQUEST), object: nil, queue: self.queue, using: { (notification) -> Void in
             
             if (notification.object != nil)
             {
                 self.pullRequests = notification.object as! [Any]
-                self.tableView.reloadData()
+                DispatchQueue.main.async(execute: {self.tableView.reloadData()})
             }
+            
+          //  alert.dismiss(animated: true, completion: nil)
         })
-
+        
     }
 
     override func didReceiveMemoryWarning()
@@ -61,7 +68,7 @@ class GitHubClientViewController: UIViewController, UITableViewDelegate, UITable
             let number : Int32 = pullRequest["number"] as! Int32
             service.retrievePullRequest("magicalpanda", repos: "MagicalRecord", number: number)
             
-            let destination : TestClientViewController = segue.destination as! TestClientViewController
+            let destination : DifferenceWebViewController = segue.destination as! DifferenceWebViewController
             destination.number = String(number)
         }
     }

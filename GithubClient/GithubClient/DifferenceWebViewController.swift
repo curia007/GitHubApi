@@ -9,7 +9,7 @@
 import UIKit
 import GithubServices
 
-class TestClientViewController: UIViewController
+class DifferenceWebViewController: UIViewController
 {
     var number : String?
     
