@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C04E3CC21EC4F20D0043C4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E3CC11EC4F20D0043C4CA /* AppDelegate.swift */; };
-		C04E3CC41EC4F20D0043C4CA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E3CC31EC4F20D0043C4CA /* TestViewController.swift */; };
+		C04E3CC41EC4F20D0043C4CA /* TestClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E3CC31EC4F20D0043C4CA /* TestClientViewController.swift */; };
 		C04E3CC71EC4F20D0043C4CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C04E3CC51EC4F20D0043C4CA /* Main.storyboard */; };
 		C04E3CCA1EC4F20D0043C4CA /* GithubClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C04E3CC81EC4F20D0043C4CA /* GithubClient.xcdatamodeld */; };
 		C04E3CCC1EC4F20D0043C4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C04E3CCB1EC4F20D0043C4CA /* Assets.xcassets */; };
@@ -54,7 +54,7 @@
 /* Begin PBXFileReference section */
 		C04E3CBE1EC4F20D0043C4CA /* GithubClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04E3CC11EC4F20D0043C4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C04E3CC31EC4F20D0043C4CA /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		C04E3CC31EC4F20D0043C4CA /* TestClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClientViewController.swift; sourceTree = "<group>"; };
 		C04E3CC61EC4F20D0043C4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C04E3CC91EC4F20D0043C4CA /* GithubClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GithubClient.xcdatamodel; sourceTree = "<group>"; };
 		C04E3CCB1EC4F20D0043C4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				C04E3CC11EC4F20D0043C4CA /* AppDelegate.swift */,
-				C04E3CC31EC4F20D0043C4CA /* TestViewController.swift */,
+				C04E3CC31EC4F20D0043C4CA /* TestClientViewController.swift */,
 				C04E3CC51EC4F20D0043C4CA /* Main.storyboard */,
 				C0C861171EC588F100F2546A /* GitHubClientViewController.swift */,
 				C04E3CCB1EC4F20D0043C4CA /* Assets.xcassets */,
@@ -288,7 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C04E3CC41EC4F20D0043C4CA /* TestViewController.swift in Sources */,
+				C04E3CC41EC4F20D0043C4CA /* TestClientViewController.swift in Sources */,
 				C04E3CCA1EC4F20D0043C4CA /* GithubClient.xcdatamodeld in Sources */,
 				C04E3CC21EC4F20D0043C4CA /* AppDelegate.swift in Sources */,
 				C0C861181EC588F100F2546A /* GitHubClientViewController.swift in Sources */,

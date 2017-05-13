@@ -11,19 +11,27 @@ import GithubServices
 
 class TestClientViewController: UIViewController
 {
-    let githubService : GithubService = GithubService()
-
+    var number : String?
+    
+    private let githubService : GithubService = GithubService()
+    
     private let queue: OperationQueue = OperationQueue()
     private var pullRequest: Any?
     private var files: Any?
+    
+    @IBOutlet weak var webView: UIWebView!
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        githubService.retrievePullRequest("magicalpanda", repos: "MagicalRecord", number: 1228)
-        githubService.retrievePullRequestFileChanges("magicalpanda", repos: "MagicalRecord", number: 1228)
-     
+        //githubService.retrievePullRequest("magicalpanda", repos: "MagicalRecord", number: 1228)
+        //githubService.retrievePullRequestFileChanges("magicalpanda", repos: "MagicalRecord", number: 1228)
+    
+        //let url : URL = URL(string: "https://github.com/magicalpanda/MagicalRecord/pull/1228/files")!
+        //let request: URLRequest = URLRequest(url: url)
+        //self.webView.loadRequest(request)
+
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: PROCESSED_GITHUB_SERVICE_PULL_REQUEST_BY_NUMBER), object: nil, queue: self.queue, using: { (notification) -> Void in
             
             if (notification.object != nil)
@@ -42,7 +50,7 @@ class TestClientViewController: UIViewController
             {
                 self.files = notification.object
                 
-                debugPrint("[\(#function)] pull request:  \(String(describing: self.pullRequest))")
+                debugPrint("[\(#function)] files: \(String(describing: self.files))")
             }
             
             
@@ -54,6 +62,17 @@ class TestClientViewController: UIViewController
     {
         // Display NavigationBar
         self.navigationController?.isNavigationBarHidden = false
+        
+        guard let urlString : String =  "https://github.com/magicalpanda/MagicalRecord/pull/\(number!)/files" else
+        {
+            return
+        }
+        
+        let url : URL = URL(string: urlString)!
+        
+        let request : URLRequest = URLRequest(url: url)
+        self.webView.loadRequest(request)
+        
     }
 
     override func viewWillDisappear(_ animated: Bool)

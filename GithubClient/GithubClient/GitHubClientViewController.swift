@@ -49,6 +49,21 @@ class GitHubClientViewController: UIViewController, UITableViewDelegate, UITable
     {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        debugPrint("[\(#function)] segue identifier: \(String(describing: segue.identifier))")
+        
+        if (segue.identifier == "PullRequestFilesSegueIdentifier")
+        {
+            let cell : UITableViewCell = sender as! UITableViewCell
+            let indexPath : IndexPath = self.tableView.indexPath(for: cell)!
+            let pullRequest : [String : Any] = self.pullRequests[indexPath.row] as! [String : Any]
+            
+            let number : Int32 = pullRequest["number"] as! Int32
+            service.retrievePullRequest("magicalpanda", repos: "MagicalRecord", number: number)
+            
+            let destination : TestClientViewController = segue.destination as! TestClientViewController
+            destination.number = String(number)
+        }
     }
 
     // MARK: - Table view data source
@@ -79,6 +94,10 @@ class GitHubClientViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        debugPrint("[\(#function)]")
+    }
     
     /*
      // Override to support conditional editing of the table view.

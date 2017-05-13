@@ -165,7 +165,7 @@ public class GithubService : NSObject
         //request.allHTTPHeaderFields = authorization
         
         //Add Accept header
-        request.addValue("application/vnd.github.VERSION.diff", forHTTPHeaderField: "Accept")
+        request.addValue("application/vnd.github.v3.diff", forHTTPHeaderField: "Accept")
         
         self.dataSessionTask = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             
@@ -214,6 +214,5 @@ public class GithubService : NSObject
         self.dataSessionTask?.resume()
         
     }
-
 }
 
