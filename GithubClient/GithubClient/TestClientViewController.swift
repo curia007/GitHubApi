@@ -61,7 +61,7 @@ class TestClientViewController: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         // Display NavigationBar
-        self.navigationController?.isNavigationBarHidden = false
+        self.title = "Diffs for Number \(number!)"
         
         guard let urlString : String =  "https://github.com/magicalpanda/MagicalRecord/pull/\(number!)/files" else
         {

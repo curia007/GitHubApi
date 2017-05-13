@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Git Hub Client View Controller-->
+        <!--Pull Requests-->
         <scene sceneID="a7v-MW-DtD">
             <objects>
                 <viewController id="DKo-kn-gDL" customClass="GitHubClientViewController" customModule="GithubClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9eJ-nV-2LR">
-                                <rect key="frame" x="0.0" y="28" width="375" height="639"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9eJ-nV-2LR">
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PullRequestCellIdentifier" id="8ZF-vb-1nj">
@@ -51,7 +51,7 @@
                             <constraint firstItem="9eJ-nV-2LR" firstAttribute="bottom" secondItem="04x-E8-FQc" secondAttribute="top" id="k5u-mo-Aoe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8Vd-Xj-301"/>
+                    <navigationItem key="navigationItem" title="Pull Requests" id="8Vd-Xj-301"/>
                     <connections>
                         <outlet property="tableView" destination="9eJ-nV-2LR" id="vy8-ch-RbJ"/>
                     </connections>
@@ -98,7 +98,7 @@
         <!--Navigation Controller-->
         <scene sceneID="PJb-TT-KPH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="tTg-Yx-Vcz" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tTg-Yx-Vcz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="l3B-XJ-G5U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
