@@ -24,12 +24,19 @@ class GitHubClientViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Added to corect view layout when using NavigationController
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        // Calling web service to retrieve pull requests from GitHub
         service.retrievePullRequests("magicalpanda", repos: "MagicalRecord")
         
+        // Use AlertController just in case web service is taking time
         // the alert view
         //let alert = UIAlertController(title: "", message: "Loading Pull Requests", preferredStyle: .alert)
         //self.present(alert, animated: true, completion: nil)
         
+        // Once web service is complete, a notification is sent to reload data
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: PROCESSED_GITHUB_SERVICE_PULL_REQUEST), object: nil, queue: self.queue, using: { (notification) -> Void in
             
             if (notification.object != nil)
@@ -42,7 +49,7 @@ class GitHubClientViewController: UIViewController, UITableViewDelegate, UITable
         })
         
     }
-
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -59,6 +66,7 @@ class GitHubClientViewController: UIViewController, UITableViewDelegate, UITable
         
         debugPrint("[\(#function)] segue identifier: \(String(describing: segue.identifier))")
         
+        // check Segue identifier for specific action
         if (segue.identifier == "PullRequestFilesSegueIdentifier")
         {
             let cell : UITableViewCell = sender as! UITableViewCell

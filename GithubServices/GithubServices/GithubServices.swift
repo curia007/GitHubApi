@@ -40,7 +40,7 @@ public class GithubService : NSObject
         
         let request : URLRequest = URLRequest(url: url)
         
-        //GitHub doesn't allow Personal Access Tokens
+        //GitHub doesn't allow Personal Access Tokens.  Needed to setup OAuth, but didn't have an authorized callback URL
         //request.allHTTPHeaderFields = authorization
         
         self.dataSessionTask = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in

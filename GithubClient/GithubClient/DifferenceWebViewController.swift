@@ -24,7 +24,15 @@ class DifferenceWebViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Added to corect view layout when using NavigationController
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        // Initially used a web service to retrieve file diffs.  The return response includes several attributes, including
+        // 'patch'.  Patch is used to display diffs for each file. To create a simular look and feel, used a UIWebView to display file diffs.  Should change for custom ViewController.
+        
         //githubService.retrievePullRequest("magicalpanda", repos: "MagicalRecord", number: 1228)
         //githubService.retrievePullRequestFileChanges("magicalpanda", repos: "MagicalRecord", number: 1228)
     
@@ -56,6 +64,16 @@ class DifferenceWebViewController: UIViewController
             
         })
 
+        // Load UIWebView to show diffs of pull requests
+        
+        // Should replace with custom ViewController.  Currently using GithHub web page to display file diffs
+        let urlString : String =  "https://github.com/magicalpanda/MagicalRecord/pull/\(number!)/files"
+        
+        let url : URL = URL(string: urlString)!
+        
+        let request : URLRequest = URLRequest(url: url)
+        self.webView.loadRequest(request)
+
     }
 
     override func viewWillAppear(_ animated: Bool)
@@ -63,21 +81,6 @@ class DifferenceWebViewController: UIViewController
         // Display NavigationBar
         self.title = "Diffs for Number \(number!)"
         
-        guard let urlString : String =  "https://github.com/magicalpanda/MagicalRecord/pull/\(number!)/files" else
-        {
-            return
-        }
-        
-        let url : URL = URL(string: urlString)!
-        
-        let request : URLRequest = URLRequest(url: url)
-        self.webView.loadRequest(request)
-        
-    }
-
-    override func viewWillDisappear(_ animated: Bool)
-    {
-        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func didReceiveMemoryWarning()
