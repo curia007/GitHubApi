@@ -31,9 +31,9 @@ public class GithubService : NSObject
         super.init()
     }
     
-    public func retrievePullRequests(_ owner: String, repos: String)
+    public func retrievePullRequests(_ owner: String, repos: String, state: String)
     {
-        let urlString : String = HOST + REPOS + "/" + owner + "/" + repos + "/" + PULLS + "?state=open"
+        let urlString : String = HOST + REPOS + "/" + owner + "/" + repos + "/" + PULLS + "?state=\(state)"
         let url : URL = URL(string: urlString)!
         
         debugPrint("[\(#function)] url: \(url)")

@@ -29,7 +29,7 @@ class GitHubClientViewController: UIViewController, UITableViewDelegate, UITable
         self.automaticallyAdjustsScrollViewInsets = false
         
         // Calling web service to retrieve pull requests from GitHub
-        service.retrievePullRequests("magicalpanda", repos: "MagicalRecord")
+        service.retrievePullRequests("magicalpanda", repos: "MagicalRecord", state: "open")
         
         // Use AlertController just in case web service is taking time
         // the alert view
